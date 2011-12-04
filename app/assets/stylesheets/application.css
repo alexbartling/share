@@ -1,0 +1,230 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+
+#header_wrapper {
+	background-image: -moz-radial-gradient(center top, ellipse farthest-side, #D1EBFF 0%, #00A3EF 100%);
+/*	background:#999;*/
+	height:100px;
+	width:100%;;
+		
+}
+
+#header_inner {
+	height: 80px;
+    margin: 0 auto;
+    width: 950px;
+	
+}
+
+#login_wrap {
+	border-radius: 0 0 4px 4px;
+    color: black;
+    float: right;
+    width: 100px;
+
+	
+}
+#login_wrap a {
+    background:white;
+	border-radius: 0 0 4px 4px;
+    color: black;
+    float: right;
+    height: 25px;
+    text-align: center;
+    width: 100px;
+	font-size: 16px;
+	text-decoration:none;
+}
+
+#login_wrap a:hover {
+	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #E6E6E6 100%);
+
+}
+
+.clear{
+	clear:both;
+}
+
+#wrapper {
+	background:#F8F8F8;
+}
+
+#main_column_login{
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #EEEEEE;
+	height: auto;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+#main_inner{
+	margin: 0 auto;
+	width: 950px
+}
+
+#login_wrapper {
+    margin: 20px auto;
+    width: 500px;
+}
+
+#login_header {
+    border: 1px solid #136EAF;
+    border-radius: 5px 5px 0 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#login_header_inner {
+	background-image: -moz-radial-gradient(center top, ellipse farthest-side, #D1EBFF 0%, #00A3EF 100%);
+	border-radius: 5px 5px 2px 2px;
+	color: #F8F8F8;
+	font-size: 15px;
+	text-align:center;
+	}
+}
+
+.login_main {
+	background: none repeat scroll 0 0 #EEEEEE;
+	border-color: #FFFFFF #CCCCCC #CCCCCC;
+	border-radius: 0 0 5px 5px;
+	border-style: solid;
+ 	border-width: 1px;
+}
+
+.login_inner {
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+    border-radius: 0 0 5px 5px;
+    border-right: 1px solid #999999;
+	background:#eeeeee;
+}
+
+.login_content {
+	border-bottom: 1px solid #CCCCCC;
+	margin: 0 auto;
+	padding: 20px 0 10px;
+    width: 330px
+}
+
+.login_label {
+	color: #666666;
+	display: block;
+    float: left;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 8px;
+    width: 85px
+}
+
+.login_submit {
+	border-top: 1px solid #FFFFFF;
+	margin: 0 auto;
+    padding: 20px 0;
+    width: 330px;
+}
+
+#login_wrapper div.login_submit input[type="submit"] {
+    background-image: -moz-radial-gradient(left top, ellipse farthest-side, #ACD99B 0%, #30902A 100%);
+    border: 1px solid #999999;
+    border-radius: 3px 3px 3px 3px;
+    color: #222222;
+    display: block;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 7px 10px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #CCCCCC;
+    width: 140px;
+}
+
+#remember_container {
+	color: #333333;
+    font-size: 12px;
+    margin: 0 0 0 15px;
+	text-align:center;
+}
+
+#label_remember {
+	color: #404040;
+    float: left;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 6px;
+    text-align: right;
+    width: 190px;
+}
+
+#user_remember_me {
+	border: medium none;
+	height: auto;
+    line-height: normal;
+    margin-top: 8px;
+    padding: 0;
+    width: auto;
+}
+
+#login_extras {
+	color: #000000;
+	margin: 10px auto;
+    text-align: center;
+    width: 300px;
+}
+
+#flash_alert {
+	background:red;
+	border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF !important;
+    font-size: 13px;
+    font-weight: bold;
+    margin:auto;
+    padding: 3px 5px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #333333;
+    width: 400px;
+}
+
+.packet_list_header, .packet_list, .packet_details {  
+    width:800px;  
+    font-weight:bold;  
+    font-size:12px;  
+    overflow:hidden;  
+  
+}  
+.file_name_header, .file_name {  
+    width:350px;  
+    float:left;  
+    padding-left:20px;  
+}  
+.file_size_header, .file_size {  
+    width:100px;  
+    float:left;  
+}  
+.file_last_updated_header, .file_last_updated {  
+    width:150px;  
+    float:left;  
+}  
+.packet_list {  
+    padding:20px 0;  
+}  
+.packet_details {  
+    font-weight:normal;  
+    height:25px;  
+    line-height:25px;  
+    border:1px solid #FFF;  
+    width:790px;  
+    color:#4F4F4F;  
+}  
+  
+.packet_details a, .packet_details a:visited {  
+    text-decoration:none;  
+    color:#1D96EF;  
+    font-size:12px;  
+}

@@ -1,0 +1,21 @@
+<% title "Packets" %>
+
+
+
+
+<table>
+  <tr>
+    <th>User</th>
+  </tr>
+  <% for packet in @packets %>
+    <tr>
+      <td><%= packet.user_id %></td>
+      <td><%= link_to packet.file_name, download_url(packet) %></td>
+      <td><%= link_to "Show", packet %></td>
+      <td><%= link_to "Edit", edit_packet_path(packet) %></td>
+      <td><%= link_to "Destroy", packet, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Packet", new_packet_path %></p>

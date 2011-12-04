@@ -1,0 +1,44 @@
+
+<div id="main_column_login">
+    <div id="main_inner">
+        <div id="login_wrapper">
+            <div id="login_header_wrapper">
+                <div id="login_header_inner">
+                <h2>Login to Share Files</h2>
+                </div>
+            </div>
+            <div id="login_form" class="login_main">
+                <div class="login_inner">
+                    <% flash.each do |name, msg| %>
+                        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                      <% end %>
+                      <%= content_tag :h1, yield(:title) if show_title? %>
+                    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                      <div class="login_content">
+                          <div class="login_label">Email</div>
+                          <%= f.email_field :email %>
+                          
+                          <div class="clear"></div>
+
+                          <div class="login_label">Password</div>
+                          <%= f.password_field :password %>
+
+                          <% if devise_mapping.rememberable? -%>
+                          <div id="remember_container">
+                            <%= f.check_box :remember_me %> 
+                            <%= f.label :remember_me_on_this_computer, :id => "label_remember" %></div>
+                            <% end -%>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="login_submit">
+                        <%= f.submit "Sign in" %>
+                      </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login_extras">
+        <%= render :partial => "devise/shared/links" %>
+    </div>
+</div>
