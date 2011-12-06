@@ -4,6 +4,7 @@ require File.expand_path('../boot', __FILE__)
 require 'devise'
 require 'rails/all'
 require 'paperclip'
+require 'acts_as_tree'
 
 
 

@@ -1,5 +1,10 @@
 Sharebox::Application.routes.draw do
 
+  resources :folders
+  match "browse/:folder_id" => "home#browse", :as => "browse"
+  
+  #route for creating sub_folders
+  match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder"
   resources :packets
 
   match "packets/get/:id" => "packets#get", :as => "download"

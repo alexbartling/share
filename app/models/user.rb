@@ -8,8 +8,17 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   
   has_many :packets
+  has_many :folders
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+    data = access_token.extra.raw_info
+    if user = User.find_by_email(data.email)
+      user
+    else # Create a user with a stub password. 
+      User.create!(:email => data.email, :encrypted_password => Devise.friendly_token[0,20]) 
+    end
+  end
+  def self.find_for_twitter_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
     if user = User.find_by_email(data.email)
       user

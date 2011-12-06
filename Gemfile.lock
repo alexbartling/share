@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.1.2)
     activesupport (3.1.2)
       multi_json (~> 1.0)
+    acts_as_tree (0.1.1)
     addressable (2.2.6)
     ansi (1.4.1)
     arel (2.2.1)
@@ -71,6 +72,7 @@ GEM
     multi_json (1.0.4)
     multipart-post (1.1.4)
     nifty-generators (0.4.6)
+    oauth (0.4.5)
     oauth2 (0.5.1)
       faraday (~> 0.7.4)
       multi_json (~> 1.0.3)
@@ -79,9 +81,14 @@ GEM
       rack
     omniauth-facebook (1.0.0)
       omniauth-oauth2 (~> 1.0.0)
+    omniauth-oauth (1.0.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.0.0)
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
+    omniauth-twitter (0.0.7)
+      omniauth-oauth (~> 1.0)
     orm_adapter (0.0.5)
     paperclip (2.4.5)
       activerecord (>= 2.3.0)
@@ -145,12 +152,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tree
   coffee-rails (~> 3.1.1)
   devise
   jquery-rails
   mocha
   nifty-generators
   omniauth-facebook
+  omniauth-twitter
   paperclip
   rails (= 3.1.2)
   sass-rails (~> 3.1.5.rc.2)

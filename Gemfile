@@ -44,6 +44,10 @@ group :test do
 gem 'paperclip'
 
 gem "omniauth-facebook"
+gem "omniauth-twitter"
+
+#For nested folders  
+gem "acts_as_tree"
 
 end
 gem "mocha", :group => :test
