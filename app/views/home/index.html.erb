@@ -27,12 +27,23 @@
    <div class="packet_list">  
        <!-- Listing Folders -->  
        <% @folders.each do |folder| %>  
-           <div class="packet_details folder">  
+            <div class="asset_details folder">  
                <div class="file_name"><%= link_to folder.name, browse_path(folder) %></div>  
-               <div class="file_size"> - </div>  
-               <div class="file_last_updated"> - </div>  
+               <div class="file_size">-</div>  
+               <div class="file_last_updated">-</div>  
+               <div class="actions">  
+                   <div class="share">  
+                       <%= link_to "Share" %>  
+                   </div>  
+                   <div class="rename">  
+                       <%= link_to "Rename", rename_folder_path(folder) %>  
+                   </div>  
+                   <div class="delete">  
+                     <%= link_to "Delete", folder, :confirm => 'Are you sure to delete the folder and all of its contents?', :method => :delete %>    
+                   </div>  
+               </div>  
            </div>  
-       <% end %>  
+       <% end %> 
 
        <!-- Listing Files -->  
          <% @packets.each do |packet| %>  
@@ -40,6 +51,15 @@
                  <div class="file_name"><%= link_to packet.file_name, download_url(packet) %></div>  
                  <div class="file_size"><%= number_to_human_size(packet.file_size, :precision => 2) %></div>  
                  <div class="file_last_updated"><%= packet.uploaded_file_updated_at %></div>  
+                 <div class="actions">  
+                    <div class="download">  
+                    <%= link_to "Download", download_url(packet) %>  
+                    </div>  
+                    <div class="delete">  
+                        <%= link_to "Delete", packet, :confirm => 'Are you sure?', :method => :delete %>  
+                     
+                    </div>  
+                </div>
              </div>  
          <% end %>  
    </div>

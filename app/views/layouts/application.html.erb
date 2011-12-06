@@ -4,6 +4,7 @@
     <title>File Sharing System <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <%= javascript_include_tag "jquery.Rails" %>
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag :application%>
     <%= csrf_meta_tag %>

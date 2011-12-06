@@ -45,16 +45,17 @@ class PacketsController < ApplicationController
     end
   end
 
-  def destroy
-    @packet = current_user.packets.find(params[:id])
-    @packet.destroy
-    redirect_to packets_url, :notice => "Successfully destroyed packet."
+  def destroy  
+    @packet = current_user.packets.find(params[:id])  
+    @parent_folder = @packet.folder #grabbing the parent folder before deleting the record  
+    @packet.destroy  
+    flash[:notice] = "Successfully deleted the file."  
+
+    #redirect to a relevant path depending on the parent folder  
+    if @parent_folder  
+     redirect_to browse_path(@parent_folder)  
+    else  
+     redirect_to root_url  
+    end  
   end
-  #this action will let the users download the files (after a simple authorization check)  
-  def get  
-  packet = current_user.packets.find_by_id(params[:id])  
-  if packet 
-       send_file packet.uploaded_file.path, :type => packet.uploaded_file_content_type  
-  end  
-end
 end

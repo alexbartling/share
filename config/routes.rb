@@ -10,6 +10,9 @@ Sharebox::Application.routes.draw do
   match "browse/:folder_id/new_file" => "packets#new", :as => "new_sub_file"
   resources :packets
 
+  #for renaming a folder  
+  match "browse/:folder_id/rename" => "folders#edit", :as => "rename_folder"  
+
   match "packets/get/:id" => "packets#get", :as => "download"
 
   get "home/index"
