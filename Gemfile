@@ -43,5 +43,7 @@ group :test do
 #Uploading files
 gem 'paperclip'
 
+gem "omniauth-facebook"
+
 end
 gem "mocha", :group => :test
