@@ -1,5 +1,12 @@
-<% title "New Packet" %>
-
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", packets_path %></p>
+<% title "Upload a file" %>  
+<%= render :partial => "home/breadcrumbs" %>  
+  
+<%= render 'form' %>  
+  
+<p>  
+<% if @packet.folder %>  
+   <%= link_to "Back to '#{@packet.folder.name}' Folder", browse_path(@packet.folder) %>  
+<% else %>  
+   <%= link_to "Back", root_url %>  
+<% end %>  
+</p>  

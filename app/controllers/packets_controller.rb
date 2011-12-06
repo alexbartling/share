@@ -7,18 +7,30 @@ class PacketsController < ApplicationController
     @packet = current_user.packets.find(params[:id])
   end
 
-  def new
-    @packet = Packet.new
+  def new  
+    @packet = current_user.packets.build      
+    if params[:folder_id] #if we want to upload a file inside another folder  
+     @current_folder = current_user.folders.find(params[:folder_id])  
+     @packet.folder_id = @current_folder.id  
+    end      
   end
 
-  def create
-    @packet = current_user.packets.new(params[:packet])
-    if @packet.save
-      redirect_to @packet, :notice => "Successfully created packet."
-    else
-      render :action => 'new'
-    end
-  end
+  def create  
+
+    @packet = current_user.packets.build(params[:packet])  
+    if @packet.save  
+     flash[:notice] = "Successfully uploaded the file."  
+
+     if @packet.folder #checking if we have a parent folder for this file  
+       redirect_to browse_path(@packet.folder)  #then we redirect to the parent folder  
+     else  
+       redirect_to root_url  
+     end        
+    else  
+     render :action => 'new'  
+    end  
+  end  
+
 
   def edit
     @packet = current_user.packets.find(params[:id])

@@ -5,6 +5,9 @@ Sharebox::Application.routes.draw do
   
   #route for creating sub_folders
   match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder"
+  
+  #for uploading files to folders  
+  match "browse/:folder_id/new_file" => "packets#new", :as => "new_sub_file"
   resources :packets
 
   match "packets/get/:id" => "packets#get", :as => "download"

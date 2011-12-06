@@ -228,3 +228,12 @@
     color:#1D96EF;  
     font-size:12px;  
 }
+
+.breadcrumbs {  
+   margin:10px 0;  
+   font-weight:bold;  
+}  
+.breadcrumbs a {  
+   color:#1D96EF;  
+   text-decoration:none;  
+}
